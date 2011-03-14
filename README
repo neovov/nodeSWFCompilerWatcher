@@ -1,0 +1,29 @@
+This is a node.js script to launch the Flex compiler (or whatever AS compiler you want) when hitting save in your prefered editor.
+
+== Installation ==
+1) Install node.js
+2) Get the latest flex SDK and put it whatever you want
+3) Configure the compiler server (server.js)
+4) Have fun!
+
+== Configuration ==
+You have to modify some variables in order to fit to your project hierarchy.
+
+Open server.js and locate/modify those variables :
+  - folders: The folders where your files are located
+   - build: The folder where to build the SWF file
+   - src: The folder where to watch for source files
+  - main: The Main class to use in the compiler
+  - compiler: Where to find the SWF compiler (bin/mxmlc in the flex SDK folder), can be absolute and relative
+  - parameters: The compiler parameters
+
+That’s it, you’re ready to use the script!
+
+== Usage ==
+Using a Terminal, go to the server.js folder and launch:
+node server.js
+
+Then, you can open your AS sources files and start working.
+
+== TODO ==
+Actually, the server watch only the .as file in the folders.src folder. In the future, it’ll be able to watch the folders.src sub-folders for .as files too.
